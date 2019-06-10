@@ -1,5 +1,5 @@
 {% set name = "gemmi" %}
-{% set version = "0.2.5" %}
+{% set version = "0.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 03675448742460cb65298f8f8fc742979dace3fc92665642e9f3b5e8f05489ef
+  sha256: 4450a68864e573f635c738cea4c1b682fb4f20b68666b0d14d2341d37aaac195
 
 build:
   number: 0
