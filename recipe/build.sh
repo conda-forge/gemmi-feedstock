@@ -1,16 +1,12 @@
 #!/bin/bash
-mkdir -p build
-pushd build
 
-cmake .. \
-      -DCMAKE_PREFIX_PATH=$PREFIX \
-      -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON \
-      -DCMAKE_BUILD_TYPE=Release
+cmake \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_INSTALL_PREFIX=$PREFIX \
+    -D CMAKE_PREFIX_PATH=$PREFIX \
+    -D PYTHON_EXECUTABLE=$PYTHON \
+    -D USE_PYTHON=ON \
+    .
 
-make -j$CPU_COOUNT
-
-cp gemmi "$PREFIX/bin/"
-
-popd
-
-"$PYTHON" -m pip install . --no-deps -vv
+make -j$CPU_COUNT
+make install

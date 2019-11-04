@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 58952b58fb1edb2172e5b8e33f76d31913d457a4d42707dff68871baa7eae13d
+  patches:
+    - gz.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and py27]
 
 requirements:
@@ -21,12 +23,10 @@ requirements:
     - ninja  # [win]
   host:
     - python
-    - pip
     - pybind11
     - zlib
   run: 
     - python
-    - zlib
 
 test:
   commands:

@@ -1,16 +1,15 @@
 cmake ^
     -G "Ninja" ^
-    -D CMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
-    -D CMAKE_VERBOSE_MAKEFILE:BOOL=ON ^
     -D CMAKE_BUILD_TYPE=Release ^
+    -D CMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
+    -D CMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
+    -D PYTHON_EXECUTABLE=%PYTHON% ^
+    -D USE_PYTHON=ON ^
     .
 if errorlevel 1 exit 1
 
-ninja
+cmake --build . --config Release
 if errorlevel 1 exit 1
 
-cp gemmi.exe "%LIBRARY_BIN%"
-if errorlevel 1 exit 1
-
-"%PYTHON%" -m pip install . --no-deps -vv
+cmake --build . --config Release --target install
 if errorlevel 1 exit 1
