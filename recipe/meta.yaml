@@ -1,5 +1,5 @@
 {% set name = "gemmi" %}
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 651cc7d3077508b5d88de9650677c0ef87fcc71272081142eb62ed326946d255
+  sha256: 91ed07a585389a908e66461b08834fa163395502792a80ad29762e2fb0bd2755
 
 build:
   number: 0
@@ -23,13 +23,13 @@ requirements:
     - python
     - pybind11
     - zlib
-  run: 
+  run:
     - python
 
 test:
   commands:
     - gemmi --help
-  imports: 
+  imports:
     - gemmi
 
 about:
@@ -37,7 +37,7 @@ about:
   license: MPL-2.0
   license_family: OTHER
   license_file: LICENSE.txt
-  summary: 'Macromolecular crystallography library and utilities.'
+  summary: Macromolecular crystallography library and utilities.
   doc_url: https://gemmi.readthedocs.io/
   dev_url: https://github.com/project-gemmi/gemmi
 
