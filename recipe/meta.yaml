@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: a6c3e86fdabeb3f5b662826e3155ed9793a2d90043b66d5f0448e34437accd15
+  patches:
+    - patch/0001-disable-compilation-in-setup-py.py
 
 build:
   number: 1
