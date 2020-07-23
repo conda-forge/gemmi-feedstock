@@ -10,3 +10,4 @@ cmake \
 
 make -j$CPU_COUNT
 make install
+python -m pip install --no-deps --ignore-installed -vv .

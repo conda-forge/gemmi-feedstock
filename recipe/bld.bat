@@ -13,3 +13,6 @@ if errorlevel 1 exit 1
 
 cmake --build . --config Release --target install
 if errorlevel 1 exit 1
+
+python -m pip install --no-deps --ignore-installed -vv .
+if errorlevel 1 exit 1
