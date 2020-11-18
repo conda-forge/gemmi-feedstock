@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 cmake \
     -D CMAKE_BUILD_TYPE=Release \

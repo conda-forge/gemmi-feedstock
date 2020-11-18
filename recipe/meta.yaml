@@ -8,10 +8,11 @@ package:
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 9d7aea326f7cbd32a6e609c55bb2249946e87dc2f9dccded2dfe132955dd3dc7
+  patches:
+    - PR57.patch
 
 build:
-  number: 0
-  skip: true  # [win and py27]
+  number: 1
 
 requirements:
   build:
@@ -20,8 +21,9 @@ requirements:
     - cmake
     - ninja  # [win]
   host:
-    - python
     - pybind11
+    - python
+    - setuptools
     - zlib
   run:
     - python
@@ -29,8 +31,12 @@ requirements:
 test:
   commands:
     - gemmi --help
+    - python -m gemmi-examples
+    - pip check
   imports:
     - gemmi
+  requires:
+    - pip
 
 about:
   home: https://project-gemmi.github.io/
@@ -43,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - anthchirp
     - mcs07
