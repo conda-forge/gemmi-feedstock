@@ -21,9 +21,9 @@ requirements:
     - cmake
     - ninja  # [win]
   host:
-    - setuptools
-    - python
     - pybind11
+    - python
+    - setuptools
     - zlib
   run:
     - python
@@ -49,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - anthchirp
     - mcs07
