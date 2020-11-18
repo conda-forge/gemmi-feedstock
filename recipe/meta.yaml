@@ -20,11 +20,10 @@ requirements:
     - cmake
     - ninja  # [win]
   host:
+    - setuptools
     - python
     - pybind11
     - zlib
-  run:
-    - python
 
 test:
   commands:
