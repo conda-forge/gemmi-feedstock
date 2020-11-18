@@ -29,6 +29,7 @@ requirements:
 test:
   commands:
     - gemmi --help
+    - python -m gemmi-examples
     - pip check
   imports:
     - gemmi
