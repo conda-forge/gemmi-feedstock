@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: 9d7aea326f7cbd32a6e609c55bb2249946e87dc2f9dccded2dfe132955dd3dc7
+  patches:
+    - PR57.patch
 
 build:
   number: 1
