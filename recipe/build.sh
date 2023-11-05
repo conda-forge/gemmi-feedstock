@@ -7,6 +7,7 @@ cmake ${CMAKE_ARGS} \
     -D CMAKE_PREFIX_PATH=$PREFIX \
     -D Python_EXECUTABLE=$PYTHON \
     -D USE_PYTHON=ON \
+    -D CMAKE_CXX_VISIBILITY_PRESET=hidden \
     .
 
 make -j$CPU_COUNT
