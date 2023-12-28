@@ -11,6 +11,8 @@ source:
 
 build:
   number: 0
+  script:
+    - {{ PYTHON }} -m pip install . -vv --config-settings="cmake.args=-DBUILD_GEMMI_PROGRAM=ON;-DINSTALL_DEV_FILES=ON"
 
 requirements:
   build:
@@ -25,7 +27,8 @@ requirements:
   host:
     - pybind11
     - python
-    - setuptools
+    - pip >=22.1
+    - scikit-build-core >=0.7.0
     - zlib
   run:
     - python
@@ -33,7 +36,6 @@ requirements:
 test:
   commands:
     - gemmi --help
-    - python -m gemmi-examples
     - pip check
   imports:
     - gemmi
