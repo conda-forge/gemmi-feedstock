@@ -12,7 +12,7 @@ source:
 build:
   number: 0
   script:
-    - {{ PYTHON }} -m pip install . -vv --config-settings="cmake.args=-DBUILD_GEMMI_PROGRAM=ON;-DINSTALL_DEV_FILES=ON"
+    - {{ PYTHON }} -m pip install . -vv --config-settings="cmake.args=-DBUILD_GEMMI_PROGRAM=ON;-DUSE_ZLIB_NG=ON"
 
 requirements:
   build:
@@ -28,8 +28,10 @@ requirements:
     - pybind11
     - python
     - pip >=22.1
-    - scikit-build-core >=0.7.0
-    - zlib
+    - scikit-build-core >=0.8.1
+    - zlib-ng
+    - pybind11-stubgen
+    - numpy
   run:
     - python
 
