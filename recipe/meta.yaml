@@ -22,27 +22,32 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [linux]
+    - make  # [not win]
     - ninja  # [win]
   host:
-    - pybind11
     - python
-    - pip >=22.1
-    - scikit-build-core >=0.8.1
+    - pybind11
+    - scikit-build-core
+    - pip
     - zlib-ng
     - pybind11-stubgen
-    - numpy
+    - numpy >=1.26
   run:
     - python
 
 test:
+  source_files:
+    - tests
+    - examples
   commands:
     - gemmi --help
     - pip check
+    - python -m unittest discover -s tests -v
   imports:
     - gemmi
   requires:
     - pip
+    - numpy
 
 about:
   home: https://project-gemmi.github.io/
