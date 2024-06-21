@@ -36,4 +36,4 @@ zip_keys:
 - - python
   - numpy
 zlib_ng:
-- '2.0'
+- '2.2'
