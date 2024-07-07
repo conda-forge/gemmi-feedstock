@@ -32,8 +32,7 @@ requirements:
     - pip
     - zlib-ng
     - pybind11-stubgen
-    - numpy         # [py<=310]
-    - numpy >=1.26  # [py>310]
+    - numpy
   run:
     - python
 
