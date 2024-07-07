@@ -49,7 +49,6 @@ test:
     - gemmi
   requires:
     - pip
-    - numpy
 
 about:
   home: https://project-gemmi.github.io/
