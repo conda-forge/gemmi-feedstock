@@ -21,5 +21,6 @@ target_platform:
 zip_keys:
 - - python
   - numpy
+  - channel_sources
 zlib_ng:
-- '2.0'
+- '2.2'
