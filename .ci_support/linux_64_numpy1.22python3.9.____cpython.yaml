@@ -35,5 +35,6 @@ zip_keys:
   - cdt_name
 - - python
   - numpy
+  - channel_sources
 zlib_ng:
 - '2.2'
