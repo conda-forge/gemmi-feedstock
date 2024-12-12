@@ -22,7 +22,8 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
-    - ninja
+    - make  # [not win]
+    - ninja  # [win]
   host:
     - python
     - nanobind
