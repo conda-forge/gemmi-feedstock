@@ -18,22 +18,17 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - pybind11                               # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [not win]
-    - ninja  # [win]
+    - ninja
   host:
     - python
-    - pybind11
+    - nanobind
     - scikit-build-core
     - pip
     - zlib-ng
-    - pybind11-stubgen
-    - numpy         # [py<=310]
-    - numpy >=1.26  # [py>310]
   run:
     - python
 
