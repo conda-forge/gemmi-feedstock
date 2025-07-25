@@ -1,15 +1,11 @@
 c_compiler:
 - vs2022
-c_stdlib:
-- vs
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
 - vs2022
-numpy:
-- '2'
 pin_run_as_build:
   python:
     min_pin: x.x
@@ -18,5 +14,5 @@ python:
 - 3.13.* *_cp313
 target_platform:
 - win-64
-zlib_ng:
-- '2.2'
+zlib:
+- '1'
