@@ -10,42 +10,35 @@ source:
   sha256: b67c8f79d85c4fd6766ce5b0418c79f4cb54a62d9091de6d0a7c20bb6060070e
 
 build:
-  number: 0
-  script:
-    - {{ PYTHON }} -m pip install . -vv --config-settings="cmake.args=-DBUILD_GEMMI_PROGRAM=ON;-DUSE_ZLIB_NG=ON"
+  number: 1
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [not win]
+    - make  # [linux]
     - ninja  # [win]
   host:
+    - pybind11
     - python
-    - nanobind
-    - scikit-build-core
-    - pip
-    - zlib-ng
+    - setuptools
+    - zlib
   run:
     - python
 
 test:
-  source_files:
-    - tests
-    - examples
   commands:
     - gemmi --help
+    - python -m gemmi-examples
     - pip check
-    - python -m unittest discover -s tests -v
   imports:
     - gemmi
   requires:
     - pip
-    - numpy
 
 about:
   home: https://project-gemmi.github.io/
@@ -58,6 +51,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - ndevenish
-    - wojdyr
+    - anthchirp
     - mcs07
