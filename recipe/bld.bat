@@ -1,5 +1,5 @@
 cmake ^
-    -G "Ninja" ^
+    -G Ninja ^
     -D CMAKE_BUILD_TYPE=Release ^
     -D CMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
     -D CMAKE_PREFIX_PATH="%LIBRARY_PREFIX%" ^
