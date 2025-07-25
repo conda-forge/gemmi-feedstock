@@ -1,7 +1,10 @@
 #!/bin/bash
 set -e
 
+export CXXFLAGS="${CXXFLAGS} -include cstdint"
+
 cmake ${CMAKE_ARGS} \
+    -D CMAKE_CXX_FLAGS="${CXXFLAGS}" \
     -D CMAKE_BUILD_TYPE=Release \
     -D CMAKE_INSTALL_PREFIX=$PREFIX \
     -D CMAKE_PREFIX_PATH=$PREFIX \
