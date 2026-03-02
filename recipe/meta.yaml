@@ -1,5 +1,5 @@
 {% set name = "gemmi" %}
-{% set version = "0.7.4" %}
+{% set version = "0.7.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/project-gemmi/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: 58ed9023e0f75033ebec1da630461bc6e1af661f29f0c41deed66c20315ebe2a
+  sha256: 9e2a8a51e62c69bf43f62aadf527ca4312860de8a36c12a8747d3e8ae556f0b3
 
 build:
-  number: 2
+  number: 0
   run_exports: {{ pin_subpackage(name, max_pin="x.x.x") }}
   script:
     - {{ PYTHON }} -m pip install . -vv --config-settings="cmake.args=-DBUILD_GEMMI_PROGRAM=ON;-DUSE_ZLIB_NG=ON"
